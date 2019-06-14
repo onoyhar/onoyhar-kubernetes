@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    app: myapp
+    type: front-end
+  namespace: onoy-development
+
+spec:
+  template:
+      metadata:
+        labels:
+          app: myapp
+          type: front-end
+        name: myapp-pod
+      spec:
+        containers:
+          -
+            name: nginx-container
+            image: nginx:1.17.0
+
+  replicas: 4
+
+  selector:
+    matchLabels:
+      app: myapp
+      type: front-end

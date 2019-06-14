@@ -1,0 +1,22 @@
+Summary Commands
+
+1. create deployment
+kubectl create -f deployment-definition.yml
+
+2. get deployment
+kubectl get deployments
+
+3. update and apply deployment
+kubectl apply -f deployment-definition.yml
+
+4. set / add image deployment
+kubectl set image deployment/myapp=deployment nginx=nginx:1.7.1
+
+5. cek status rollout 
+kubectl rollout status deployment/myapp-deployment
+
+5. cek history rollout 
+kubectl rollout history deployment/myapp-deployment
+
+5. cek undo rollout / rollback
+kubectl rollout undo deployment/myapp-deployment
